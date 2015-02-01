@@ -4,11 +4,7 @@ describe MultiplicationTable do
   let(:described_entity) { MultiplicationTable }
 
   it 'returns a multiplication table of the given prime numbers' do
-    decorator = MiniTest::Mock.new
-    decorator.expect(:format, "- 3 5 7\n", [['-', 3, 5, 7], false])
-    decorator.expect(:format, "3 9 15 21\n", [[3, 9, 15, 21], false])
-    decorator.expect(:format, "5 15 25 35\n", [[5, 15, 25, 35], false])
-    decorator.expect(:format, "7 21 35 49\n", [[7, 21, 35, 49], true])
+    decorator = mock_decorator
 
     described_entity.make(primes, decorator).must_equal table
 
@@ -40,5 +36,15 @@ describe MultiplicationTable do
 5 15 25 35
 7 21 35 49
 EOS
+  end
+
+  def mock_decorator
+    mock = MiniTest::Mock.new
+    mock.expect(:format, "- 3 5 7\n", [['-', 3, 5, 7], false])
+    mock.expect(:format, "3 9 15 21\n", [[3, 9, 15, 21], false])
+    mock.expect(:format, "5 15 25 35\n", [[5, 15, 25, 35], false])
+    mock.expect(:format, "7 21 35 49\n", [[7, 21, 35, 49], true])
+
+    mock
   end
 end
