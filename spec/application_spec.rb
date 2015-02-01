@@ -4,10 +4,12 @@ require 'primes_generator'
 require 'ascii_table_decorator'
 
 describe Application do
+  let(:described_entity) { Application }
+
   it 'prints out a multiplication table of the first n prime numbers' do
     output, = capture_io do
-      Application.stub(:primes_count, 3) do
-        Application.run
+      described_entity.stub(:primes_count, 3) do
+        described_entity.run
       end
     end
 
