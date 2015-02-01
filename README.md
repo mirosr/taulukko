@@ -1,5 +1,6 @@
 # Taulukko
 
+[![Build Status](https://travis-ci.org/mirosr/taulukko.svg)](https://travis-ci.org/mirosr/taulukko)
 [![Code Climate](https://codeclimate.com/github/mirosr/taulukko/badges/gpa.svg)](https://codeclimate.com/github/mirosr/taulukko)
 
 ## Description
