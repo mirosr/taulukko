@@ -1,5 +1,7 @@
 class AsciiTableDecorator
   def format(cols, last_row)
+    return '' if cols.to_a.empty?
+
     border = header(cols) + "\n"
 
     row = border + body(cols) + "\n"
