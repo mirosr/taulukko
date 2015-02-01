@@ -1,5 +1,7 @@
 # Taulukko
 
+[![Code Climate](https://codeclimate.com/github/mirosr/taulukko/badges/gpa.svg)](https://codeclimate.com/github/mirosr/taulukko)
+
 ## Description
 
 This program prints out a multiplication table of the first 10 prime numbers. Across the top and down the left side are the 10 primes, and the body of the table contains the product of multiplying these numbers
