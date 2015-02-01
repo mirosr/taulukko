@@ -1,4 +1,7 @@
 require_relative 'spec_helper'
+require 'multiplication_table'
+require 'primes_generator'
+require 'ascii_table_decorator'
 
 describe Application do
   it 'prints out a multiplication table of the first n prime numbers' do

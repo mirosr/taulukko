@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
 $LOAD_PATH.unshift('lib')
-require 'application'
+Dir.glob('./lib/**/*.rb') { |file| require file }
 
 Application.run
