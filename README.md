@@ -9,7 +9,7 @@ This program prints out a multiplication table of the first 10 prime numbers. Ac
 
 ## Requirements
 
-ruby >= 1.9.3 (YARV)
+ruby >= 2.0.0-p598 (YARV)
 
 ## How to run the program?
 
