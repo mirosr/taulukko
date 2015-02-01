@@ -7,6 +7,18 @@ describe MultiplicationTable do
     output.must_equal table
   end
 
+  context 'when no prime numbers are given' do
+    it 'returns an empty string' do
+      MultiplicationTable.make(nil, nil).must_equal ''
+    end
+  end
+
+  context 'when an empty prime numbers list is given' do
+    it 'returns an empty string' do
+      MultiplicationTable.make([], nil).must_equal ''
+    end
+  end
+
   private
 
   def primes

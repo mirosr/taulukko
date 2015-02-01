@@ -1,5 +1,7 @@
 module MultiplicationTable
   def self.make(primes, decorator)
+    return '' if primes.to_a.empty?
+
     table = multiply_numbers(primes)
 
     table.reduce('') do |memo, row|

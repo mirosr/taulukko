@@ -7,3 +7,11 @@ if __FILE__ == $0
 else
   require File.basename($0, '.*').sub('_spec', '')
 end
+
+module MiniTest
+  class Spec
+    class << self
+      alias_method :context, :describe
+    end
+  end
+end
