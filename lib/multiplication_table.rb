@@ -5,9 +5,7 @@ module MultiplicationTable
     table = multiply_numbers(primes)
 
     table.reduce('') do |memo, row|
-      memo += row.join(' ')
-      memo += "\n" unless row == table.last
-      memo
+      memo += decorator.format(row, row == table.last)
     end
   end
 
@@ -23,6 +21,6 @@ module MultiplicationTable
   end
 
   def self.multiply_row(numbers, multiplier)
-    [multiplier] << numbers.map { |number| number * multiplier }
+    [multiplier] + numbers.map { |number| number * multiplier }
   end
 end
