@@ -1,26 +1,37 @@
-module MultiplicationTable
+class MultiplicationTable
   def self.make(primes, decorator)
-    return '' if primes.to_a.empty?
+    new(primes, decorator).public_send(__method__)
+  end
 
-    table = multiply_numbers(primes)
+  def initialize(primes, decorator)
+    @primes = primes.to_a
+    @decorator = decorator
+  end
+
+  def make
+    return '' if @primes.empty?
 
     table.reduce('') do |memo, row|
-      memo += decorator.format(row, row == table.last)
+      memo += @decorator.format(row, row == table.last)
     end
   end
 
   private
 
-  def self.multiply_numbers(numbers)
+  def table
+    @table ||= multiply_numbers
+  end
+
+  def multiply_numbers
     [].tap do |table|
-      numbers.each_with_index do |number, index|
-        table << ['-', numbers].flatten if index == 0
-        table << multiply_row(numbers, number)
+      @primes.each_with_index do |number, index|
+        table << ['-', @primes].flatten if index == 0
+        table << multiply_row(@primes, number)
       end
     end
   end
 
-  def self.multiply_row(numbers, multiplier)
+  def multiply_row(numbers, multiplier)
     [multiplier] + numbers.map { |number| number * multiplier }
   end
 end
