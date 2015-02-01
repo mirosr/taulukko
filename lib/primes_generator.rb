@@ -1,5 +1,7 @@
 module PrimesGenerator
   def self.generate(count)
+    return [] if count.to_i <= 0
+
     [].tap do |primes|
       number = 2
       while primes.count < count
